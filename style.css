@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(245, 113, 25);
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    font-family: Verdana, sans-serif;
+}
+
+.input,.date{
+    height: 2rem;
+    padding: 5px;
+    font-size: 1rem;
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+.chart,.main-div{
+    height: fit-content;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.main-div{
+    margin:10px ;
+}
+
+.add-button{
+    background-color: #0dc00d;
+    
+    height: 2rem;
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+     
+    height: 2rem;
+    font-size: 16px; /* Font size */
+    font-family: Verdana,sans-serif;
+    cursor: pointer; 
+    
+    transition: background-color 0.3s ease;
+}
+
+.add-button:active {
+    background-color: #70ba6c;
+}
+
+
+.delete-button{
+    background-color: rgb(237 27 27);
+    color: white;
+    height: 1.5rem;
+}
+
+.list-obj-name{
+    text-align: left;
+}
+
+
+
+.clear-button {
+    background-color:#cc0000;  /* Red background color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bolder;
+     
+    height: 2rem;
+    font-size: 16px; /* Font size */
+    font-family: Verdana,sans-serif;
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 30%; /* Space above the button */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.clear-button:hover {
+    background-color: #ff1a1a; /* Darker red on hover */
+}
+
+.clear-button:active {
+    background-color: #ff4c4c;  /* Even darker red on click */
+}
+
+.clear-button:focus {
+    outline: none; /* Remove default outline on focus */
+    box-shadow: 0 0 0 3px rgba(255, 76, 76, 0.5); /* Add a box shadow for focus indication */
+}
+
