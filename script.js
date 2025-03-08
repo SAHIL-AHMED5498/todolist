@@ -49,32 +49,45 @@ inputElement.addEventListener('keydown',(event)=>{
 
 });
 
-function render(){
+function render() {
+    chart.innerHTML = ""; // Clear previous content
 
-    let listHTML=' ';
-    for(let i=0;i<listObj.length;i++)
-        {
-            listHTML+=`
-            
-            <div class="list-obj-name"> ${listObj[i].name}</div> 
-            <div>${listObj[i].date} </div>
-            <button onclick="
-            listObj.splice(${i},1);
-            saveData()
+    listObj.forEach((task, index) => {
+        // Create task container
+        const taskDiv = document.createElement("div");
+        taskDiv.className = "flex justify-between items-center bg-white p-4 rounded-lg shadow-sm border border-gray-300";
 
+        // Task text
+        const taskText = document.createElement("div");
+        taskText.className = "text-lg font-medium text-gray-700";
+        taskText.textContent = task.name;
+
+        // Task date
+        const taskDate = document.createElement("div");
+        taskDate.className = "text-gray-500 text-sm";
+        taskDate.textContent = task.date ? `📅 ${task.date}` : "📅 No date";
+
+        // Delete button
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition";
+        deleteButton.textContent = "Delete";
+        deleteButton.onclick = () => {
+            listObj.splice(index, 1);
+            saveData();
             render();
-            "
-             class="delete-button" >Delete</button>`
+        };
 
+        // Append elements
+        taskDiv.appendChild(taskText);
+        taskDiv.appendChild(taskDate);
+        taskDiv.appendChild(deleteButton);
+        chart.appendChild(taskDiv);
+    });
 
-        }
-
-
-    chart.innerHTML=listHTML;
-    inputElement.value='';    
-
-
+    inputElement.value = ""; // Clear input after adding
 }
+
+
 
 clearButton.addEventListener('click', () => {
     localStorage.removeItem('List'); // Remove 'List' from localStorage

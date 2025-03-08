@@ -4,25 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project-7</title>
-    <link rel="stylesheet" href="style.css">
+    <title>To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h3>To do list</h3>
-    <div class="main-div">
-        
-        <input type="text" placeholder="Enter to do" class="input">
-        <input type="date" class="date">
-        <button class="add-button">Add</button>
+<body class="bg-gray-200 text-gray-900 flex justify-center items-center min-h-screen p-4">
 
+    <div class="w-full max-w-2xl bg-white shadow-lg rounded-2xl p-6">
+        <h3 class="text-3xl font-bold text-center mb-6 text-gray-700">To-Do List</h3>
+
+        <!-- Input Section -->
+        <div class="flex flex-col md:flex-row gap-4 mb-6">
+            <input type="text" placeholder="Enter a task..." 
+                class="input flex-1 text-lg p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="date" 
+                class="date p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button class="add-button px-6 py-3 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 transition">Add</button>
+        </div>
+
+        <!-- Task List -->
+        <div class="chart max-h-80 overflow-y-auto p-4 bg-gray-100 rounded-lg shadow-inner space-y-4"></div>
+
+        <!-- Clear Button -->
+        <button class="clear-button w-full mt-4 px-6 py-3 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition">Clear List</button>
     </div>
-    <div class="chart"></div>
-
-    <button class="clear-button">Clear List</button>
 
     <script src="script.js"></script>
-</body>
 
+</body>
 
 </html>
